@@ -1,0 +1,7 @@
+$button: './button.scss';
+
+.toolbar {
+  & > :external(button from '#{$button}') {
+    margin-left: 2rem;
+  }
+}

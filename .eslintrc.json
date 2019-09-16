@@ -1,0 +1,12 @@
+{
+  "plugins": ["prettier"],
+  "extends": ["4catalyzer", "4catalyzer-jest", "prettier"],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "global-require": "off",
+    "import/no-dynamic-require": "off"
+  }
+}

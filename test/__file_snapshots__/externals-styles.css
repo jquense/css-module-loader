@@ -1,0 +1,9 @@
+.externals--base--2HU_u {
+  color: blue;
+}
+.externals--button--3mvEh {
+  color: red;
+}
+.externals--toolbar--3Adsi > .externals--base--2HU_u.externals--button--3mvEh {
+  margin-left: 2rem;
+}

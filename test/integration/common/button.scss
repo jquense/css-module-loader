@@ -1,0 +1,5 @@
+.button {
+  composes: base from './base.scss';
+
+  color: red;
+}
