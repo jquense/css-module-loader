@@ -5,10 +5,12 @@
   !*** ./test/fixtures/common/externals.scss ***!
   \*********************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// extracted by mini-css-extract-plugin
-module.exports = {"toolbar":"externals--toolbar--3HGQb"};
+// Exports
+module.exports = {
+	"toolbar": "externals--toolbar--3HGQb"
+};
 
 /***/ }),
 

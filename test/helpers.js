@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const MemoryFS = require('memory-fs');
 const prettier = require('prettier');
 
-const loader = require('../loader');
-
 function format(strings, ...values) {
   const str = strings.reduce(
     (acc, next, idx) => `${acc}${next}${values[idx] || ''}`,

@@ -1,9 +1,9 @@
-.externals--base--2HU_u {
+.base--base--1uAtd {
   color: blue;
 }
-.externals--button--3mvEh {
+.button--button--32Qrn {
   color: red;
 }
-.externals--toolbar--3Adsi > .externals--base--2HU_u.externals--button--3mvEh {
+.externals--toolbar--3HGQb > .base--base--1uAtd.button--button--32Qrn {
   margin-left: 2rem;
 }

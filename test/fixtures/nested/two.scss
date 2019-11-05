@@ -1,0 +1,7 @@
+@import './theme.scss';
+
+@value red from './shared.scss';
+
+.base :external(inner from './three.scss') {
+    color: red;
+}

@@ -6,7 +6,7 @@ const { runWebpack } = require('./helpers');
 const snapshot = name => path.join(__dirname, `__file_snapshots__/${name}`);
 
 describe('webpack integration', () => {
-  function getConfig(entry) {
+  function getConfig(entry, options, cssLoaderOptions = {}) {
     return {
       devtool: false,
       mode: 'development',
@@ -19,19 +19,20 @@ describe('webpack integration', () => {
           {
             test: /\.(s?)css$/,
             use: [
-              ExtractCSS.loader,
+              cssLoaderOptions.onlyLocals ? null : ExtractCSS.loader,
               {
                 loader: 'css-loader',
-                options: { importLoaders: 2 },
+                options: { ...cssLoaderOptions, importLoaders: 2 },
               },
               {
-                loader: require.resolve('../loader.js'),
+                loader: require.resolve('../lib/loader.js'),
+                options,
               },
               {
                 loader: 'sass-loader',
                 options: { implementation: require('sass') },
               },
-            ],
+            ].filter(Boolean),
           },
         ],
       },
@@ -45,7 +46,7 @@ describe('webpack integration', () => {
   async function assetsMatchSnapshot(entry) {
     const name = path.basename(entry, path.extname(entry));
 
-    const assets = await runWebpack(getConfig(`./integration/${entry}`));
+    const assets = await runWebpack(getConfig(`./fixtures/${entry}`));
 
     expect(assets['main.css'].source()).toMatchFile(
       snapshot(`${name}-styles.css`),
@@ -60,4 +61,33 @@ describe('webpack integration', () => {
   it('should work with externals', async () => {
     await assetsMatchSnapshot('externals.js');
   });
+
+  it('should work with nested and multiple dependencies', async () => {
+    await assetsMatchSnapshot('nested-deps.js');
+  });
+
+  it('should work with onlyLocals', async () => {
+    const assets = await runWebpack(
+      getConfig(`./fixtures/externals.js`, undefined, {
+        onlyLocals: true,
+      }),
+    );
+
+    expect(assets['main.js'].source()).toMatchFile(snapshot(`onlyLocals.js`));
+  });
+
+  it.each([['camelCase'], ['camelCaseOnly'], ['dashes'], ['dashesOnly']])(
+    'should work with localsConvention: %s',
+    async localsConvention => {
+      const assets = await runWebpack(
+        getConfig(`./fixtures/complex-names.module.scss`, undefined, {
+          localsConvention,
+        }),
+      );
+
+      expect(assets['main.js'].source()).toMatchFile(
+        snapshot(`localsConvention-${localsConvention}.js`),
+      );
+    },
+  );
 });

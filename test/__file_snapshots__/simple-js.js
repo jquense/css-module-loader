@@ -1,40 +1,40 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
-/***/ "./test/integration/common/base.scss":
-/*!*******************************************!*\
-  !*** ./test/integration/common/base.scss ***!
-  \*******************************************/
+/***/ "./test/fixtures/common/base.scss":
+/*!****************************************!*\
+  !*** ./test/fixtures/common/base.scss ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"base":"base--base--ow-W8"};
+module.exports = {"base":"base--base--1uAtd"};
 
 /***/ }),
 
-/***/ "./test/integration/common/button.scss":
-/*!*********************************************!*\
-  !*** ./test/integration/common/button.scss ***!
-  \*********************************************/
+/***/ "./test/fixtures/common/button.scss":
+/*!******************************************!*\
+  !*** ./test/fixtures/common/button.scss ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"button":"button--base--jiPTM button--button--2VPLn"};
+module.exports = {"button":"base--base--1uAtd button--button--32Qrn"};
 
 /***/ }),
 
-/***/ "./test/integration/simple.js":
-/*!************************************!*\
-  !*** ./test/integration/simple.js ***!
-  \************************************/
+/***/ "./test/fixtures/simple.js":
+/*!*********************************!*\
+  !*** ./test/fixtures/simple.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-const styles = __webpack_require__(/*! ./common/button.scss */ "./test/integration/common/button.scss");
-const styles2 = __webpack_require__(/*! ./common/base.scss */ "./test/integration/common/base.scss");
+const styles = __webpack_require__(/*! ./common/button.scss */ "./test/fixtures/common/button.scss");
+const styles2 = __webpack_require__(/*! ./common/base.scss */ "./test/fixtures/common/base.scss");
 
 
 /***/ })
 
-},[["./test/integration/simple.js","runtime~main"]]]);
+},[["./test/fixtures/simple.js","runtime~main"]]]);
