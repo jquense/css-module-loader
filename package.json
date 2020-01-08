@@ -1,12 +1,14 @@
 {
   "name": "css-module-loader",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.0",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/4Catalyzer/css-module-loader.git"
+    "url": "git+https://github.com/4Catalyzer/css-module-loader.git"
   },
-  "author": "4Catalyzer",
+  "author": {
+    "name": "4Catalyzer"
+  },
   "license": "MIT",
   "scripts": {
     "format": "4c format src './*'",
@@ -73,5 +75,11 @@
     "memory-fs": "^0.5.0",
     "sass-loader": "^8.0.0",
     "webpack": "^4.41.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/4Catalyzer/css-module-loader/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/4Catalyzer/css-module-loader#readme",
+  "_id": "css-module-loader@1.0.0"
 }
