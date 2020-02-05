@@ -22,7 +22,7 @@ __webpack_require__(/*! ./nested/three.scss */ "./test/fixtures/nested/three.scs
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"base":"one--base--2z77O"};
+module.exports = {"red":"rgb(255, 0 ,0)","base":"one--base--2z77O"};
 
 /***/ }),
 
@@ -46,7 +46,7 @@ module.exports = {"blue":"rgb(0, 0, 255)","inner":"three--inner--2a-T6"};
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"red":"rgb(255, 0 ,0)","base":"two--base--2113t"};
+module.exports = {"base":"two--base--2113t"};
 
 /***/ })
 
