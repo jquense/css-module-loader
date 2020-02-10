@@ -4,12 +4,17 @@
 /*!**************************************!*\
   !*** ./test/fixtures/nested-deps.js ***!
   \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./nested/one.scss */ "./test/fixtures/nested/one.scss")
-__webpack_require__(/*! ./nested/two.scss */ "./test/fixtures/nested/two.scss")
-__webpack_require__(/*! ./nested/three.scss */ "./test/fixtures/nested/three.scss")
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nested_one_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nested/one.scss */ "./test/fixtures/nested/one.scss");
+/* harmony import */ var _nested_two_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nested/two.scss */ "./test/fixtures/nested/two.scss");
+/* harmony import */ var _nested_three_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nested/three.scss */ "./test/fixtures/nested/three.scss");
+
+
+
 
 
 /***/ }),
@@ -18,11 +23,13 @@ __webpack_require__(/*! ./nested/three.scss */ "./test/fixtures/nested/three.scs
 /*!***************************************!*\
   !*** ./test/fixtures/nested/one.scss ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-module.exports = {"red":"rgb(255, 0 ,0)","base":"one--base--2z77O"};
+/* harmony default export */ __webpack_exports__["default"] = ({"red":"rgb(255, 0 ,0)","base":"one--base--2z77O"});
 
 /***/ }),
 
@@ -30,11 +37,13 @@ module.exports = {"red":"rgb(255, 0 ,0)","base":"one--base--2z77O"};
 /*!*****************************************!*\
   !*** ./test/fixtures/nested/three.scss ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-module.exports = {"blue":"rgb(0, 0, 255)","inner":"three--inner--2a-T6"};
+/* harmony default export */ __webpack_exports__["default"] = ({"blue":"rgb(0, 0, 255)","inner":"three--inner--2a-T6"});
 
 /***/ }),
 
@@ -42,11 +51,13 @@ module.exports = {"blue":"rgb(0, 0, 255)","inner":"three--inner--2a-T6"};
 /*!***************************************!*\
   !*** ./test/fixtures/nested/two.scss ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-module.exports = {"base":"two--base--2113t"};
+/* harmony default export */ __webpack_exports__["default"] = ({"base":"two--base--2113t"});
 
 /***/ })
 

@@ -4,11 +4,13 @@
 /*!*********************************************!*\
   !*** ./test/fixtures/common/externals.scss ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-module.exports = {"toolbar":"externals--toolbar--3HGQb"};
+/* harmony default export */ __webpack_exports__["default"] = ({"toolbar":"externals--toolbar--3HGQb"});
 
 /***/ }),
 

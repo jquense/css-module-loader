@@ -19,10 +19,19 @@ describe('webpack integration', () => {
           {
             test: /\.(s?)css$/,
             use: [
-              cssLoaderOptions.onlyLocals ? null : ExtractCSS.loader,
+              cssLoaderOptions.onlyLocals
+                ? null
+                : {
+                    loader: ExtractCSS.loader,
+                    options: { esModule: true },
+                  },
               {
                 loader: 'css-loader',
-                options: { ...cssLoaderOptions, importLoaders: 2 },
+                options: {
+                  ...cssLoaderOptions,
+                  importLoaders: 2,
+                  esModule: true,
+                },
               },
               {
                 loader: require.resolve('../lib/loader.js'),
@@ -43,10 +52,11 @@ describe('webpack integration', () => {
     };
   }
 
-  async function assetsMatchSnapshot(entry) {
-    const name = path.basename(entry, path.extname(entry));
+  async function assetsMatchSnapshot(entry, { name, ...opts } = {}) {
+    // eslint-disable-next-line no-param-reassign
+    name = name || path.basename(entry, path.extname(entry));
 
-    const assets = await runWebpack(getConfig(`./fixtures/${entry}`));
+    const assets = await runWebpack(getConfig(`./fixtures/${entry}`, opts));
 
     expect(assets['main.css'].source()).toMatchFile(
       snapshot(`${name}-styles.css`),
@@ -60,6 +70,13 @@ describe('webpack integration', () => {
 
   it('should work with externals', async () => {
     await assetsMatchSnapshot('externals.js');
+  });
+
+  it('should work for compat mode', async () => {
+    await assetsMatchSnapshot('simple.js', {
+      name: 'compat-all',
+      compat: true,
+    });
   });
 
   it('should work with nested and multiple dependencies', async () => {

@@ -4,11 +4,13 @@
 /*!*************************************************!*\
   !*** ./test/fixtures/complex-names.module.scss ***!
   \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-module.exports = {"foo-bar":"complex-names-module--foo-bar--3PvWR","fooBar":"complex-names-module--foo-bar--3PvWR","btn-primary__inner":"complex-names-module--btn-primary__inner--3fdjV","btnPrimary__inner":"complex-names-module--btn-primary__inner--3fdjV"};
+/* harmony default export */ __webpack_exports__["default"] = ({"foo-bar":"complex-names-module--foo-bar--3PvWR","fooBar":"complex-names-module--foo-bar--3PvWR","btn-primary__inner":"complex-names-module--btn-primary__inner--3fdjV","btnPrimary__inner":"complex-names-module--btn-primary__inner--3fdjV"});
 
 /***/ })
 

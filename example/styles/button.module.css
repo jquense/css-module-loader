@@ -1,0 +1,6 @@
+@value * as utils from './utils.module.css';
+
+.foo {
+  color: blue;
+  background-color: utils.bgColor;
+}
