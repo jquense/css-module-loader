@@ -122,39 +122,6 @@ as global.
 
 **How to migrate:** Change to the parameterized form `:global(.token) {}`
 
-#### `valueAliasing`
-
-`css-modules` version of `@value`s allows for individually aliasing imported names:
-
-```css
-@value primary as utilsPrimary from './utils.css';
-
-.foo {
-  color: utilsPrimary;
-}
-```
-
-`modular-css` only (currently) allows importing by the exact name OR namespacing the entire import
-like: `@value * as utils from './utils.css';`
-
-> Note: enabling this will also enable `icssImports` which is used to implement it.
-
-**When to enable:** If you `@value` aliases, e.g.
-
-```css
-@value primary as utilsPrimary from './utils.css';
-```
-
-**How to migrate:** Switch to using `@value * as ns` to handle conflicts (see: https://m-css.com/guide/#namespaces)
-
-```css
-@value * as utils from './utils.css';
-
-.foo {
-  color: utils.primary;
-}
-```
-
 #### `icssExports`
 
 A very niche feature of css-modules that you may not even know is possible.

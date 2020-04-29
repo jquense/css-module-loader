@@ -1,8 +1,9 @@
 const Processor = require('@modular-css/processor');
+
 const plugin = require('../lib/plugins/compat-icss-export');
 
 describe('compat :export', () => {
-  const run = str => {
+  const run = (str) => {
     const processor = new Processor({
       processing: [plugin],
     });

@@ -1,4 +1,5 @@
 const postcss = require('postcss');
+
 const plugin = require('../lib/plugins/compat-scope-pseudos');
 
 describe('scoping compat', () => {

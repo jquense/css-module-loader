@@ -1,9 +1,11 @@
 const path = require('path');
+
 const Processor = require('@modular-css/processor');
+
 const plugin = require('../lib/plugins/compat-icss-import');
 
 describe('compat :import', () => {
-  const run = async str => {
+  const run = async (str) => {
     const processor = new Processor({
       processing: [plugin],
       resolvers: [(src, file) => path.resolve(path.dirname(src), file)],

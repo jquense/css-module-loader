@@ -1,11 +1,11 @@
 const path = require('path');
+
 const Processor = require('@modular-css/processor');
-const plugin = require('../lib/plugins/compat-value-aliasing');
 
 describe('compat value aliasing', () => {
   const run = async (str, opts = {}) => {
     const processor = new Processor({
-      before: [plugin],
+      // before: [plugin],
       resolvers: [(src, file) => path.resolve(path.dirname(src), file)],
       ...opts,
     });
@@ -20,20 +20,6 @@ describe('compat value aliasing', () => {
 
     return processor.string('./foo.css', str);
   };
-
-  it('should import and replace values', async () => {
-    const result = await run(`
-      @value primary as utilsPrimary from './utils.css';
-    `);
-
-    expect(result.details.result.css).toContain(
-      `
-:import('./utils.css') {
-  utilsPrimary: primary
-}
-`.trim(),
-    );
-  });
 
   it('should ignore namespace values', async () => {
     const result = await run(`

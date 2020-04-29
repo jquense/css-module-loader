@@ -39,11 +39,12 @@ describe('options', () => {
         :import("utils.css") {
           ____a: a;
         }
-        .bar .styles--foo--1ywIf {
+        .bar .styles--foo--26tlK {
           color: red;
         }
         :export {
-          foo: styles--foo--1ywIf;
+          utilsPrimary: red;
+          foo: styles--foo--26tlK;
           height: 30rem;
         }
       `);

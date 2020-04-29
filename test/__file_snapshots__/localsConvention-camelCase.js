@@ -10,7 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-/* harmony default export */ __webpack_exports__["default"] = ({"foo-bar":"complex-names-module--foo-bar--3PvWR","fooBar":"complex-names-module--foo-bar--3PvWR","btn-primary__inner":"complex-names-module--btn-primary__inner--3fdjV","btnPrimaryInner":"complex-names-module--btn-primary__inner--3fdjV"});
+/* harmony default export */ __webpack_exports__["default"] = ({"foo-bar":"complex-names-module--foo-bar--3JG1Q","fooBar":"complex-names-module--foo-bar--3JG1Q","btn-primary__inner":"complex-names-module--btn-primary__inner--1sIK5","btnPrimaryInner":"complex-names-module--btn-primary__inner--1sIK5"});
 
 /***/ })
 
