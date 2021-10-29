@@ -96,7 +96,7 @@ Different compatibilty plugins can also be more finely enabled/disabled
     options: {
       compat: {
         scoping: false,
-        valueAliasing: false,
+        composesDelimiter: false,
         icssImports: true,
         icssExports: true,
       }
@@ -110,7 +110,7 @@ The compatiblity plugins are outlined below:
 
 ref: https://m-css.com/guide/#global
 
-`css-modules` allows `:global` and `:local` scoping to nest, wheras `modular-css` only allows the `:global(.foo)` pseudo for marking a selector
+`css-modules` allows `:global` and `:local` scoping to nest, whereas `modular-css` only allows the `:global(.foo)` pseudo for marking a selector
 as global.
 
 **When to enable:** If your code contains none-parameterized `:global` or `:local` pseudos like
@@ -121,6 +121,28 @@ as global.
 ```
 
 **How to migrate:** Change to the parameterized form `:global(.token) {}`
+
+#### `composesDelimiter`
+
+css-modules uses whitespace to delineate between `composes` classes for multiple classes:
+
+```css
+.btn {
+  composes: appearance-none text-white from global;
+}
+```
+
+`modular-css` is a bit stricter, requiring a comma (`,`);
+
+```css
+.btn {
+  composes: appearance-none, text-white from global;
+}
+```
+
+**When to enable:** Migrating code that uses composes with multiple classes
+
+**How to migrate:** use comma seperators
 
 #### `icssExports`
 

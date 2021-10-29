@@ -1,9 +1,11 @@
 const path = require('path');
+
 const ExtractCSS = require('mini-css-extract-plugin');
+
 // const stripAnsi = require('strip-ansi');
 const { runWebpack } = require('./helpers');
 
-const snapshot = name => path.join(__dirname, `__file_snapshots__/${name}`);
+const snapshot = (name) => path.join(__dirname, `__file_snapshots__/${name}`);
 
 describe('webpack integration', () => {
   function getConfig(entry, options, cssLoaderOptions = {}) {
@@ -95,7 +97,7 @@ describe('webpack integration', () => {
 
   it.each([['camelCase'], ['camelCaseOnly'], ['dashes'], ['dashesOnly']])(
     'should work with localsConvention: %s',
-    async localsConvention => {
+    async (localsConvention) => {
       const assets = await runWebpack(
         getConfig(`./fixtures/complex-names.module.scss`, undefined, {
           localsConvention,

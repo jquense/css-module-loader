@@ -19,7 +19,7 @@ describe('compat :export', () => {
       }
     `);
 
-    expect(result.exports).toEqual({
+    expect(result.details.exported).toEqual({
       bar: '1px',
       foo: 'red',
     });
@@ -35,9 +35,8 @@ describe('compat :export', () => {
       }
     `);
 
-    expect(result.exports).toEqual({
+    expect(result.details.exported).toEqual({
       baz: 'red',
-      foo: 'red',
     });
 
     expect(result.details.result.css.trim()).toEqual('');

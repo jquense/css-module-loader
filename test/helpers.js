@@ -1,9 +1,9 @@
 const path = require('path');
 
 const fs = require('fs-extra');
-const webpack = require('webpack');
 const { createFsFromVolume, Volume } = require('memfs');
 const prettier = require('prettier');
+const webpack = require('webpack');
 
 const loader = require('../lib/loader');
 
@@ -68,7 +68,7 @@ function createRunner({
               ([result]) => innerResolve(JSON.stringify(result)),
               innerReject,
             );
-          }).then(r => cb(null, r), cb);
+          }).then((r) => cb(null, r), cb);
         },
 
         resolve(request, cb) {
@@ -91,8 +91,8 @@ function createRunner({
 
 const fixtures = fs
   .readdirSync(`${__dirname}/fixtures`)
-  .map(file => `${__dirname}/fixtures/${file}`)
-  .filter(f => !f.endsWith('.json'));
+  .map((file) => `${__dirname}/fixtures/${file}`)
+  .filter((f) => !f.endsWith('.json'));
 
 function runWebpack(config) {
   const compiler = webpack({
